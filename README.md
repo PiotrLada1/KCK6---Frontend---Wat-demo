@@ -1,2 +1,2 @@
-# KCK6---Fromtend---Wat-demo
+# KCK6---Frontend---Wat-demo
 Projekt na 6 laboratoria z przedmiotu Komunikacja Człowiek Komputer.
