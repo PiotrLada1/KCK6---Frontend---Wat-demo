@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Strona demonstracyjna WAT" />
+    <title>WAT - Demo Interfejsu</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Strona główna WAT Demo">WAT Demo
+            </a>
+            <nav aria-label="Nawigacja główna">
+                <ul class="nav-list">
+                    <button data-hamburger aria-expanded="false" aria-label="Otwórz menu">☰</button>
+                    <li><a href="#home">Strona główna</a></li>
+                    <li><a href="#about">O nas</a></li>
+                    <li><a href="#products">Produkty</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <h1 id="hero-heading">Nowoczesny Interfejs Użytkownika</h1>
+                <p class="lead">Tworzony z HTML5, CSS3 i JavaScript</p>
+                <a href="#products" class="btn btn-primary" role="button" aria-label="Przejdź do produktów">Zobacz produkty</a>
+            </div>
+        </section>
+
+        <section id="products" class="products" aria-labelledby="products-heading">
+            <div class="container">
+                <h2 id="products-heading">Nasze Produkty</h2>
+                <div class="card-grid">
+                    <article class="card" aria-labelledby="product-a-heading">
+                        <h3 id="product-a-heading">Produkt A</h3>
+                        <p>Opis produktu A.</p>
+                    </article>
+                    <article class="card" aria-labelledby="product-b-heading">
+                        <h3 id="product-b-heading">Produkt B</h3>
+                        <p>Opis produktu B.</p>
+                    </article>
+                    <article class="card" aria-labelledby="product-c-heading">
+                        <h3 id="product-c-heading">Produkt C</h3>
+                        <p>Opis produktu C.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <form id="contact-form">
+            <input type="text" name="name" placeholder="Imię" />
+            <input type="email" name="email" placeholder="E-mail" />
+            <textarea name="msg" placeholder="Wiadomość"></textarea>
+            <button type="submit" class="btn btn-primary">Wyślij</button>
+            </form>
+        </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 WAT Demo. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script type="module" src="api.js"></script>
+    <script type="module" src="form-validator.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

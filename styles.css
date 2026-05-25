@@ -1,0 +1,76 @@
+/* Zmienne CSS- Paleta WAT */
+:root {
+--color-primary:#003c78;
+--color-gold:#a07800;
+--color-light:#dceeff;
+--color-text:#1a1a2e;
+--color-bg:#f5f7fc;
+--radius:0.5rem;
+--shadow:0 4px 16px rgba(0,60,120,0.12);
+--transition:0.3s ease;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg:#0d1117;
+        --color-text: #e6edf3;
+        --color-light:#1a2332;
+    }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: var(--color-bg);
+color: var(--color-text); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+}
+
+.site-header {background: var(--color-primary); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow);}
+.site-header .container { display: flex; justify-content: space-between;  align-items: center; }
+.logo { color: var(--color-gold); font-size: 1.5rem; font-weight:700; text-decoration: none; }
+.nav-list { list-style: none; display: flex; gap: 2rem; }
+.nav-list a { color: white; text-decoration: none; transition: color var(--transition); }
+.nav-list a:hover { color: var(--color-gold); }
+
+.hero { background: linear-gradient(135deg, var(--color-primary) 0%, #005bb5 100%); color: white; padding: 5rem 0; text-align:center; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem; }
+.lead { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
+
+.btn { padding: 0.75rem 2rem; border-radius: var(--radius); font-weight: 600; cursor: pointer; transition: all var(--transition); text-decoration: none; display: inline-block; }
+.btn-primary { background: var(--color-gold); color: white; border:none; }
+.btn-primary:hover { background: #c09000; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160,120,0,0.4); }
+
+.products { padding: 4rem 0; }
+.products h2 { text-align: center; color: var(--color-primary); font-size: 2rem; margin-bottom: 2rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.card { background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); transition: transform var(--transition); }
+.card:hover { transform: translateY(-4px); }
+.card h3 { color: var(--color-primary); margin-bottom: 0.5rem; }
+
+@media (max-width: 768px) { .nav-list { display: none; } .hero { padding: 3rem 0; }}
+
+.site-footer { background: var(--color-primary); color: white; text-align: center; padding: 1.5rem; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); }}
+.card { animation: fadeInUp 0.5s ease both;}
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+
+[data-hamburger] { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+@media (max-width: 768px) {
+  [data-hamburger] { display: block; }
+  .nav-open { display: flex !important; flex-direction: column; }
+}
+
+@keyframes shimmer {
+    0% { background-position:-200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius);
+}
+.skeleton-title { height: 1.2rem; width: 70%; margin-bottom: 0.75 rem; }
+.skeleton-text { height: 0.9rem; width: 100%; margin-bottom: 0.5 rem; }
